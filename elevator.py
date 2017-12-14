@@ -47,6 +47,9 @@ async def elevator(calls, semaphore):
     here = 1    # этаж на котором находится лифт;
     there = 1   # этаж на который следует лифт;
 
+    messages.addstr(f'lift on the {here} floor\n')
+    messages.refresh()
+
     while True:
         await semaphore.acquire()
         there = calls.pop(0)
@@ -121,6 +124,8 @@ if __name__ == '__main__':
     curses.init_pair(4, curses.COLOR_GREEN, curses.COLOR_WHITE)
     curses.init_pair(5, curses.COLOR_WHITE, curses.COLOR_BLACK)
 
+    stdscr.addstr(0, 9, f'press button [1-{KEYS[floors-1]}]')
+    stdscr.addstr(0, 28, f'or ALT+[1-{KEYS[floors-1]}]\n')
     stdscr.addstr(0, size[1] - 19, ' press Esc to exit ', curses.color_pair(3))
     stdscr.refresh()
 
