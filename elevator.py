@@ -1,4 +1,5 @@
-# -*- coding: utf-8 -*- python 3.6.3
+# -*- coding: utf-8 -*-
+# Windows 7 32 bit, python 3.6.3
 from threading import Thread
 import asyncio
 import curses
