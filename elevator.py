@@ -44,7 +44,7 @@ async def check(calls, semaphore):
 #------------------------------------------------------------------------------
 async def elevator(calls, semaphore):
     here = 1    # этаж на котором находится лифт;
-    there = 1   # этаж на следует лифт;
+    there = 1   # этаж на который следует лифт;
 
     while True:
         await semaphore.acquire()
